@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script type="javascript">
+        function onRegister(){
+           var actionLabel = document.querySelector('input.actionLabel').value;
+           var objectName = document.querySelector('objectName').value;
+           var message = JSON.stringify({
+             message_id: 'register_create_action',
+             data: {
+               actionLabel,
+               objectName
+             }
+           });
+           window.top.postMessage(message,"*");
+        }
+    </script>
+  </head>
+  <body>
+    <h2>WebTab global create action test</h2>
+    <div>
+      <div>
+         <label for="actionLabel">Action label: </label><input name="actionLabel" class="actionLabel" type="text"/>
+      </div>
+      <br/>
+      <div>
+         <label for="objectName">Object name: </label><input name="objectName" class="objectName" type="text" />
+      </div>
+      <br />
+      <input type="button" onClick="onRegister" value="Register create action" />
+    </div>
+  <body>
+<html>
