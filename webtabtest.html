@@ -12,6 +12,7 @@
              }
            });
            window.top.postMessage(message,"*");
+           document.querySelector('.result').innerText = 'Action [' + actionLabel + '] for object [' + objectName + '] registered successfully!';
         }
     </script>
   </head>
@@ -27,6 +28,7 @@
       </div>
       <br />
       <input type="button" onClick="onRegister()" value="Register create action" />
+      <div class="result"/>
     </div>
   <body>
 <html>
